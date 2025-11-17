@@ -1,0 +1,313 @@
+/* ========== Basic Setup ========== */
+:root{
+  --blue-1: #d0e9ff;
+  --blue-2: #a7d0ff;
+  --blue-3: #70b8ff;
+  --blue-4: #3c9eff;
+  --blue-5: #1f7ae0;
+
+  --bg: #f4f9ff;
+  --card: #ffffff;
+  --muted: #6b7280;
+  --container: 1100px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system;
+  background:var(--bg);
+  color:#0f172a;
+}
+
+/* ========== Utilities ========== */
+.container{
+  width:clamp(300px, 92%, var(--container));
+  margin-inline:auto;
+  padding-inline:1rem;
+}
+
+/* ========== Header / Navbar ========== */
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:40;
+  background:linear-gradient(90deg, var(--blue-4), var(--blue-2));
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.navbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0.7rem 0;
+}
+
+.brand{
+  color:white;
+  font-weight:700;
+  text-decoration:none;
+  font-size:1.05rem;
+}
+
+.nav-links{
+  list-style:none;
+  display:flex;
+  gap:1rem;
+}
+
+.nav-links a{
+  color:white;
+  text-decoration:none;
+  padding:0.45rem 0.6rem;
+  border-radius:8px;
+  font-weight:600;
+}
+
+.nav-links a:hover{
+  background:rgba(255,255,255,0.15);
+}
+
+.nav-toggle{
+  display:none;
+  background:transparent;
+  border:none;
+  color:white;
+  font-size:1.4rem;
+  cursor:pointer;
+}
+
+/* ========== HERO ========== */
+.hero{
+  min-height:100vh;
+  background-image:url('https://static.promediateknologi.id/crop/0x0:0x0/0x0/webp/photo/p2/86/2025/05/22/lagu-hot-seventeen-jadi-mv-tercepat-capai-100-juta-views-mCVqO9t3vQ-1-2124942081.jpg');
+  background-position:center top;
+  background-size:cover;
+  background-repeat:no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  color:white;
+}
+
+.hero-overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width:100%;
+  height: 100%;
+  background:linear-gradient(
+    180deg,
+    rgba(0, 37, 84, 0.4),
+    rgba(0, 50, 100, 0.55)
+  );
+  z-index: 1;
+}
+
+.hero-content{
+  text-align:center;
+  z-index: 2;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.hero h1{
+  margin:0;
+  font-size: clamp(1.8rem, 4vw, 3.5rem);
+  letter-spacing:0.02em;
+  font-weight:800;
+  text-shadow:0 4px 18px rgba(0,0,0,0.4);
+}
+
+.tagline{
+  margin-top:0.6rem;
+  font-size:1.1rem;
+  font-weight:600;
+  color:#e6f3ff;
+}
+
+.cta{
+  display:inline-block;
+  margin-top:1.2rem;
+  background:linear-gradient(90deg, var(--blue-3), var(--blue-5));
+  padding:0.7rem 1.2rem;
+  border-radius:10px;
+  color:white;
+  text-decoration:none;
+  font-weight:700;
+  box-shadow:0 6px 16px rgba(0,0,0,0.15);
+}
+
+.cta:hover{
+  transform:translateY(-3px);
+  transition:160ms;
+}
+
+/* ========== SECTIONS ========== */
+.section{
+  padding:2.4rem 0;
+}
+
+.section-header h2{
+  margin:0 0 0.3rem 0;
+  font-size:1.4rem;
+}
+
+.section-header p{
+  margin:0;
+  color:var(--muted);
+}
+
+/* ========== MEMBERS GRID ========== */
+.member-grid{
+  margin-top:1.2rem;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1rem;
+}
+
+.member-card{
+  background:var(--card);
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 4px 18px rgba(0,0,0,0.07);
+  transition:transform 200ms ease, box-shadow 200ms;
+}
+
+.member-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 14px 30px rgba(0,0,0,0.12);
+}
+
+.member-card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+}
+
+.member-info{
+  padding:0.9rem;
+}
+
+.member-info h3{
+  margin:0 0 0.3rem 0;
+  font-weight:700;
+}
+
+.role{
+  margin:0;
+  color:var(--blue-5);
+  font-weight:600;
+}
+
+.meta{
+  margin-top:0.4rem;
+  font-size:0.88rem;
+  color:#475569;
+}
+
+/* ========== SONG LIST (Flexbox) ========== */
+.songs-list{
+  margin-top:1rem;
+  display:flex;
+  flex-wrap:wrap;
+  gap:0.6rem;
+}
+
+.song{
+  padding:0.6rem 0.9rem;
+  border-radius:8px;
+  background:linear-gradient(90deg, var(--blue-1), var(--blue-3));
+  color:#0f172a;
+  text-decoration:none;
+  font-weight:600;
+  box-shadow:0 6px 14px rgba(0,0,0,0.06);
+}
+
+.song:hover{
+  transform:translateY(-3px);
+  transition:160ms;
+}
+
+/* ========== ABOUT ========== */
+.about{
+  background:linear-gradient(
+    180deg,
+    rgba(230,245,255,0.8),
+    rgba(230,240,255,0.6)
+  );
+  padding:1.2rem;
+  border-radius:12px;
+}
+
+/* ========== FOOTER ========== */
+.site-footer{
+  background:#0f172a;
+  color:white;
+  padding:1.1rem 0;
+  margin-top:2rem;
+}
+
+.footer-inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+.site-footer a{
+  color:#a7d0ff;
+  text-decoration:none;
+}
+
+/* ========== RESPONSIVE ========== */
+@media(max-width:1000px){
+  .member-grid{
+    grid-template-columns:repeat(3,1fr);
+  }
+}
+
+@media(max-width:700px){
+  .nav-toggle{display:block;}
+
+  .nav-links{
+    display:none;
+    position:absolute;
+    top:64px;
+    right:1rem;
+    background:white;
+    flex-direction:column;
+    gap:0.5rem;
+    padding:0.8rem;
+    border-radius:8px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.15);
+  }
+
+  .nav-links.open{
+    display:flex;
+  }
+
+  .nav-links a{
+    color:#0f172a;
+  }
+
+  .member-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .member-card img{
+    height:160px;
+  }
+
+  .footer-inner{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:0.4rem;
+  }
+}
